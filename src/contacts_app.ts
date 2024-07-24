@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log('Submitting contact:', contact);
 
-            fetch('http://localhost:8080/api/contacts', {
+            fetch('https://hutly-landing-page-back.onrender.com/api/contacts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
