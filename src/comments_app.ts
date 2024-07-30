@@ -10,7 +10,7 @@ async function fetchComments() {
         const comments = await response.json();
         console.log('Fetched comments:', comments);
 
-        comments.forEach((comment: any) => {
+        comments.forEach((comment: { firstName: any; lastName: any; rate: any; text: any; }) => {
             postComment(comment);
         });
 
@@ -19,7 +19,7 @@ async function fetchComments() {
     }
 }
 
-function postComment(comment: { firstName: string; lastName: string; rate: number; text: string; }) {
+function postComment(comment: { firstName: any; lastName: any; rate: any; text: any; }) {
     const fN = comment.firstName || 'Anonymous';
     const lN = comment.lastName || 'Anonymous';
     const rate = comment.rate || 0;
@@ -27,12 +27,7 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
 
     console.log(fN, lN, rate, text);
 
-    const postContainer = document.querySelector('.testimonials-container');
-    if (!postContainer) {
-        console.error('Container not found');
-        return;
-    }
-
+    const post = document.querySelector('.testimonials-container');
     const postElement = document.createElement('div');
     postElement.className = 'comment';
 
@@ -50,14 +45,14 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
 
     const rateElement = document.createElement('div');
     rateElement.className = 'comment-rate';
-    rateElement.textContent = `rate: ${rate}`;
+    rateElement.textContent = 'rate: ${rate}';
 
     postElement.appendChild(fN_Element);
     postElement.appendChild(lN_Element);
     postElement.appendChild(textElement);
     postElement.appendChild(rateElement);
 
-    postContainer.appendChild(postElement);
+    // post.appendChild(postElement);
 }
 
 fetchComments();
