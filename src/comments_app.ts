@@ -19,7 +19,7 @@ async function fetchComments() {
     }
 }
 
-function postComment(comment: { firstName: any; lastName: any; rate: any; text: any; }) {
+function postComment(comment: { firstName: string; lastName: string; rate: number; text: string; }) {
     const fN = comment.firstName || 'Anonymous';
     const lN = comment.lastName || 'Anonymous';
     const rate = comment.rate || 0;
@@ -28,6 +28,7 @@ function postComment(comment: { firstName: any; lastName: any; rate: any; text: 
     console.log(fN, lN, rate, text);
 
     const post = document.querySelector('.testimonials-container');
+
     const postElement = document.createElement('div');
     postElement.className = 'comment';
 
@@ -52,7 +53,8 @@ function postComment(comment: { firstName: any; lastName: any; rate: any; text: 
     postElement.appendChild(textElement);
     postElement.appendChild(rateElement);
 
-    // post.appendChild(postElement);
+    // @ts-ignore
+    post.appendChild(postElement);
 }
 
 fetchComments();
