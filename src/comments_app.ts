@@ -34,7 +34,7 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
     }
 
     const postElement = document.createElement('div');
-    postElement.className = 'comment';
+    postElement.className = 'testimonial';
 
     const fN_Element = document.createElement('div');
     fN_Element.className = 'comment-fN';

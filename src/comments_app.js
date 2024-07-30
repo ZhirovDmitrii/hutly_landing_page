@@ -39,7 +39,7 @@ function postComment(comment) {
         return;
     }
     const postElement = document.createElement('div');
-    postElement.className = 'comment';
+    postElement.className = 'testimonial';
     const fN_Element = document.createElement('div');
     fN_Element.className = 'comment-fN';
     fN_Element.textContent = fN;
