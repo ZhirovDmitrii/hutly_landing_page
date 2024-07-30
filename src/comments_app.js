@@ -33,7 +33,11 @@ function postComment(comment) {
     const rate = comment.rate || 0;
     const text = comment.text || 'No content';
     console.log(fN, lN, rate, text);
-    const post = document.getElementsByClassName('testimonials-container');
+    const postContainer = document.querySelector('.testimonials-container'); // Исправлено на querySelector
+    if (!postContainer) {
+        console.error('Container not found');
+        return;
+    }
     const postElement = document.createElement('div');
     postElement.className = 'comment';
     const fN_Element = document.createElement('div');
@@ -52,6 +56,6 @@ function postComment(comment) {
     postElement.appendChild(lN_Element);
     postElement.appendChild(textElement);
     postElement.appendChild(rateElement);
-    // post.appendChild(postElement);
+    postContainer.appendChild(postElement);
 }
 fetchComments();
