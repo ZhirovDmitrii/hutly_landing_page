@@ -1,4 +1,3 @@
-
 async function fetchComments() {
     const url = 'https://hutly-landing-page-back.onrender.com/api/comments';
 
@@ -11,7 +10,7 @@ async function fetchComments() {
         const comments = await response.json();
         console.log('Fetched comments:', comments);
 
-        comments.forEach(comment => {
+        comments.forEach((comment: any) => {
             postComment(comment);
         });
 
@@ -20,7 +19,7 @@ async function fetchComments() {
     }
 }
 
-function postComment(comment) {
+function postComment(comment: { firstName: string; lastName: string; rate: number; text: string; }) {
     const fN = comment.firstName || 'Anonymous';
     const lN = comment.lastName || 'Anonymous';
     const rate = comment.rate || 0;
@@ -58,4 +57,3 @@ function postComment(comment) {
 }
 
 fetchComments();
-
