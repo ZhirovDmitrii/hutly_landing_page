@@ -27,7 +27,12 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
 
     console.log(fN, lN, rate, text);
 
-    const postContainer = document.querySelector('.testimonials-container'); // исправлено
+    const postContainer = document.querySelector('.testimonials-container'); // Исправлено на querySelector
+    if (!postContainer) {
+        console.error('Container not found');
+        return;
+    }
+
     const postElement = document.createElement('div');
     postElement.className = 'comment';
 
@@ -52,9 +57,7 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
     postElement.appendChild(textElement);
     postElement.appendChild(rateElement);
 
-    // @ts-ignore
-    postContainer.appendChild(postElement);
+    postContainer.appendChild(postElement); // Добавление в контейнер
 }
 
 fetchComments();
-
