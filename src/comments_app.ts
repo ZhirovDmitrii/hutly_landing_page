@@ -28,6 +28,10 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
     console.log(fN, lN, rate, text);
 
     const post = document.querySelector('.testimonials-container');
+    if (!post) {
+        console.error('Container not found');
+        return;
+    }
 
     const postElement = document.createElement('div');
     postElement.className = 'comment';
@@ -53,7 +57,6 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
     postElement.appendChild(textElement);
     postElement.appendChild(rateElement);
 
-    // @ts-ignore
     post.appendChild(postElement);
 }
 
