@@ -27,10 +27,9 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
 
     console.log(fN, lN, rate, text);
 
-    const post = document.getElementsByClassName('testimonials-container');
+    const postContainer = document.querySelector('.testimonials-container'); // исправлено
     const postElement = document.createElement('div');
     postElement.className = 'comment';
-
 
     const fN_Element = document.createElement('div');
     fN_Element.className = 'comment-fN';
@@ -53,7 +52,9 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
     postElement.appendChild(textElement);
     postElement.appendChild(rateElement);
 
-    // post.appendChild(postElement);
+    // @ts-ignore
+    postContainer.appendChild(postElement);
 }
 
 fetchComments();
+
