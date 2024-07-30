@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Submitting contact:', contact);
 
             fetch('https://hutly-landing-page-back.onrender.com/api/contacts', {
-                method: 'POST',
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 },
