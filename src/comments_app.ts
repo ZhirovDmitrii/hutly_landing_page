@@ -57,7 +57,7 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
     postElement.appendChild(textElement);
     postElement.appendChild(rateElement);
 
-    postContainer.appendChild(postElement); // Добавление в контейнер
+    postContainer.appendChild(postElement);
 }
 
 fetchComments();
