@@ -50,7 +50,7 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
 
     const rateElement = document.createElement('div');
     rateElement.className = 'comment-rate';
-    rateElement.textContent = 'rate: ${rate}';
+    rateElement.textContent = String(rate);
 
     postElement.appendChild(fN_Element);
     postElement.appendChild(lN_Element);
