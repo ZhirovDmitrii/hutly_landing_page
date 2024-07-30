@@ -33,7 +33,7 @@ function postComment(comment) {
     const rate = comment.rate || 0;
     const text = comment.text || 'No content';
     console.log(fN, lN, rate, text);
-    const postContainer = document.querySelector('.testimonials-container'); // Исправлено на querySelector
+    const postContainer = document.querySelector('.testimonials-container');
     if (!postContainer) {
         console.error('Container not found');
         return;

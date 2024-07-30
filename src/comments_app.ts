@@ -27,7 +27,7 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
 
     console.log(fN, lN, rate, text);
 
-    const postContainer = document.querySelector('.testimonials-container'); // Исправлено на querySelector
+    const postContainer = document.querySelector('.testimonials-container');
     if (!postContainer) {
         console.error('Container not found');
         return;
