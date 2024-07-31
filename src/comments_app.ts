@@ -52,9 +52,9 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
     rateElement.className = 'comment-rate';
     rateElement.textContent = String(rate);
 
+    postElement.appendChild(textElement);
     postElement.appendChild(fN_Element);
     postElement.appendChild(lN_Element);
-    postElement.appendChild(textElement);
     postElement.appendChild(rateElement);
 
     post.appendChild(postElement);
