@@ -65,7 +65,7 @@ function postComment(comment: { firstName: string; lastName: string; rate: numbe
     postElement.appendChild(rateElement);
 
 
-    function addStars(rate, img){
+    function addStars(rate: number, img: HTMLImageElement){
         const allStars = document.createElement('div');
         allStars.className = 'stars'
         for (let i= 0; i < rate; i++){

@@ -37,8 +37,8 @@ function postComment(comment) {
     img.src = "src/img/Star.svg";
     img.alt = 'no file';
     console.log(fN, lN, rate, text);
-    const postContainer = document.querySelector('.testimonials-container');
-    if (!postContainer) {
+    const post = document.querySelector('.testimonials-container');
+    if (!post) {
         console.error('Container not found');
         return;
     }
@@ -55,21 +55,20 @@ function postComment(comment) {
     textElement.textContent = text;
     const rateElement = document.createElement('div');
     rateElement.className = 'comment-rate';
-    // rateElement.textContent = `rate: ${rate}`;
+    // rateElement.textContent = String(rate);
     rateElement.contains(addStars(rate, img));
+    postElement.appendChild(textElement);
     postElement.appendChild(fN_Element);
     postElement.appendChild(lN_Element);
-    postElement.appendChild(textElement);
     postElement.appendChild(rateElement);
-    postContainer.appendChild(postElement);
-
-    function addStars(rate, img){
+    function addStars(rate, img) {
         const allStars = document.createElement('div');
-        allStars.className = 'stars'
-        for (let i= 0; i < rate; i++){
+        allStars.className = 'stars';
+        for (let i = 0; i < rate; i++) {
             allStars.appendChild(img);
         }
         return allStars;
     }
+    post.appendChild(postElement);
 }
 fetchComments();
